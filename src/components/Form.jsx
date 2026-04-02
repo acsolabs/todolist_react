@@ -1,3 +1,5 @@
+import "../assets/styles/form.css";
+
 const Form = () => {
   return (
     <input
