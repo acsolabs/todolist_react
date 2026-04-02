@@ -1,9 +1,10 @@
-const Header = () => {
+import "../assets/styles/header.css";
+const Header = ({ title }) => {
   return (
     <>
       <header>
-        <div className="title">
-          <h1>Mes missions à accomplir </h1>
+        <div className="header">
+          <h1>{title}</h1>
         </div>
       </header>
     </>
