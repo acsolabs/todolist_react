@@ -1,4 +1,3 @@
-import "./assets/datas/list";
 import { tasksList } from "./assets/datas/list";
 import Form from "./components/Form";
 import Header from "./components/Header";
@@ -9,13 +8,9 @@ const App = () => {
     <>
       <Header title="Mes missions à accomplir" />
       <Form placeholder="Nouvelle mission ?" />
-
-      <ListContainer tasks={tasksList}>
-        {tasksList.map((task) => {
-          return <li key={task.id}>{task.name}</li>;
-        })}
-      </ListContainer>
+      <ListContainer tasks={tasksList} />
     </>
   );
 };
+
 export default App;
