@@ -1,10 +1,10 @@
 import "../assets/styles/form.css";
 
-const Form = () => {
+const Form = ({ placeholder }) => {
   return (
     <input
       type="text"
-      placeholder="Write here..."
+      placeholder={placeholder}
       name="text"
       className="input"
     ></input>
