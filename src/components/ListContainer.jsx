@@ -1,4 +1,5 @@
 import Button from "./Button";
+import "../assets/styles/listContainer.css";
 
 const ListContainer = ({ tasks }) => {
   return (
