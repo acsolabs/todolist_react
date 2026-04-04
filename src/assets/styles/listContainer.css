@@ -1,3 +1,9 @@
 ul {
   list-style: circle;
 }
+
+.no-result {
+  text-align: center;
+  color: gold;
+  margin-top: 20px;
+}

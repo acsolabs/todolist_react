@@ -1,9 +1,12 @@
 import Button from "./Button";
 import "../assets/styles/listContainer.css";
-
 const ListContainer = ({ tasks, onDeleteTask }) => {
   if (tasks.length === 0) {
-    return <p> Aucune mission en cours</p>;
+    return (
+      <>
+        <p className="no-result">Aucune mission en cours</p>
+      </>
+    );
   } else {
     return (
       <ul>
