@@ -15,14 +15,16 @@ const App = () => {
   };
 
   const handleNewTask = (e) => {
-    if (!e.target.value) return;
-    setNewTask({ id: Date.now(), name: e.target.value });
+    setNewTask(e.target.value);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setTasks([...tasks, newTask]);
-    e.target.value = "";
+    if (!newTask.trim()) return;
+
+    const newTaskObject = { id: Date.now(), name: newTask };
+    setTasks([...tasks, newTaskObject]);
+    setNewTask("");
   };
   return (
     <>
@@ -31,6 +33,7 @@ const App = () => {
         placeholder="Nouvelle mission ?"
         handleNewTask={handleNewTask}
         handleSubmit={handleSubmit}
+        value={newTask}
       />
       <ListContainer tasks={tasks} onDeleteTask={handleDeleteId} />
     </>

@@ -1,6 +1,6 @@
 import "../assets/styles/form.css";
 
-const Form = ({ placeholder, handleNewTask, handleSubmit }) => {
+const Form = ({ placeholder, handleNewTask, handleSubmit, value }) => {
   return (
     <form action="" onSubmit={handleSubmit}>
       <input
@@ -9,6 +9,7 @@ const Form = ({ placeholder, handleNewTask, handleSubmit }) => {
         name="text"
         className="input"
         onChange={handleNewTask}
+        value={value}
       ></input>
     </form>
   );
