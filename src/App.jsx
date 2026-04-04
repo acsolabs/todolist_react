@@ -7,12 +7,16 @@ import ListContainer from "./components/ListContainer";
 const App = () => {
   const [tasks, setTasks] = useState(tasksList);
 
-  const handleDeleteId = () => {};
+  const handleDeleteId = (id) => {
+    const tasksUpdated = tasks.filter((task) => task.id !== id);
+    console.log(tasksUpdated);
+    setTasks(tasksUpdated);
+  };
   return (
     <>
       <Header title="Mes missions à accomplir" />
       <Form placeholder="Nouvelle mission ?" />
-      <ListContainer tasks={tasksList} onClick={handleDeleteId} />
+      <ListContainer tasks={tasks} onDeleteTask={handleDeleteId} />
     </>
   );
 };
