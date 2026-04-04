@@ -16,16 +16,22 @@ const App = () => {
 
   const handleNewTask = (e) => {
     if (!e.target.value) return;
-    setNewTask(e.target.value);
+    setNewTask({ id: Date.now(), name: e.target.value });
   };
 
-  //   const handleSubmit = (e)=>{
-  // console.log
-  //   }
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setTasks([...tasks, newTask]);
+    e.target.value = "";
+  };
   return (
     <>
       <Header title="Mes missions à accomplir" />
-      <Form placeholder="Nouvelle mission ?" handleNewTask={handleNewTask} />
+      <Form
+        placeholder="Nouvelle mission ?"
+        handleNewTask={handleNewTask}
+        handleSubmit={handleSubmit}
+      />
       <ListContainer tasks={tasks} onDeleteTask={handleDeleteId} />
     </>
   );

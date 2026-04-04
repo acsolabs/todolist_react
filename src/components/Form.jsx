@@ -1,14 +1,16 @@
 import "../assets/styles/form.css";
 
-const Form = ({ placeholder, handleNewTask }) => {
+const Form = ({ placeholder, handleNewTask, handleSubmit }) => {
   return (
-    <input
-      type="text"
-      placeholder={placeholder}
-      name="text"
-      className="input"
-      onChange={handleNewTask}
-    ></input>
+    <form action="" onSubmit={handleSubmit}>
+      <input
+        type="text"
+        placeholder={placeholder}
+        name="text"
+        className="input"
+        onChange={handleNewTask}
+      ></input>
+    </form>
   );
 };
 
