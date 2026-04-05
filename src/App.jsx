@@ -22,10 +22,20 @@ const App = () => {
     e.preventDefault();
     if (!newTask.trim()) return;
 
-    const newTaskObject = { id: Date.now(), name: newTask };
+    const newTaskObject = { id: Date.now(), name: newTask, done: false };
     setTasks([...tasks, newTaskObject]);
     setNewTask("");
   };
+  const handleTaskDone = (id) => {
+    const tasksDoneUpdated = tasks.map((task) => {
+      if (id === task.id) {
+        return { ...task, done: !task.done };
+      }
+      return task;
+    });
+    setTasks(tasksDoneUpdated);
+  };
+
   return (
     <>
       <Header title="Mes missions à accomplir" />
@@ -35,7 +45,11 @@ const App = () => {
         handleSubmit={handleSubmit}
         value={newTask}
       />
-      <ListContainer tasks={tasks} onDeleteTask={handleDeleteId} />
+      <ListContainer
+        tasks={tasks}
+        onDoneTask={handleTaskDone}
+        onDeleteTask={handleDeleteId}
+      />
     </>
   );
 };

@@ -7,3 +7,7 @@ ul {
   color: gold;
   margin-top: 20px;
 }
+
+.is-done {
+  text-decoration: line-through;
+}
